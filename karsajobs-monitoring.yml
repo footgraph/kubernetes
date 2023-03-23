@@ -1,0 +1,7 @@
+# kita membuat object berjenis namespace, dengan nama monitoring, dan memberikan label padanya.
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: monitoring
+  labels:
+    app: monitoring
