@@ -20,6 +20,7 @@ metadata:
   name: mongo-pvc-claim
   labels:
     app: mongo
+    type: backend
 spec:
   storageClassName: manual
   accessModes:

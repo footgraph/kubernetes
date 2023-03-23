@@ -4,7 +4,7 @@ metadata:
   name: frontend
   labels:
     app: karsajobs-ui
-    tier: frontend
+    type: frontend
 
 spec:
   ports:  
@@ -12,4 +12,4 @@ spec:
     port: 8000
   selector:
     app: karsajobs
-    tier: frontend
+    type: frontend

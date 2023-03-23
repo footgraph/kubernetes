@@ -1,9 +1,5 @@
-# Kubernetes mendukung beberapa versi API. v1 (versi satu) adalah versi API inti yang berisi banyak resource paling umum seperti Pod dan Node
 apiVersion: apps/v1
-# resource yang didefinisikan
 kind: Deployment
-# bagian ini berisi informasi yang relevan terkait resource dan dapat membantu dalam pengidentifikasian. 
-# Dalam contoh di atas, kita mendefinisikan nama Deployment sebagai karsajobs-backend dan label dengan nilai app: karsajobs.
 metadata:
   name: backend
   labels:
@@ -22,8 +18,7 @@ spec:
     spec:
       containers:
         - name: karsajobs-backend
-        #  mengunduh image
-          image: ghcr.io/adityasuryadi/karsajobs:latest
+          image: ghcr.io/footgraph/a433-microservices/karsajobs:latest
           env:
             - name: APP_PORT
               value: '8080'

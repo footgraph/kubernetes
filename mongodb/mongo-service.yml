@@ -4,9 +4,10 @@ metadata:
   name: mongo-service
   labels:
     name: karsajobs
+    type: backend
 spec:
   ports:
     - port: 27017
   selector:
-    tier: backend
+    type: backend
   type: ClusterIP
