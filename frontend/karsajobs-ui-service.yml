@@ -11,5 +11,5 @@ spec:
   - protocol: TCP
     port: 8000
   selector:
-    app: karsajobs
+    app: karsajobs-ui
     type: frontend

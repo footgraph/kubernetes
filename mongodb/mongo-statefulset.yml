@@ -1,15 +1,15 @@
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-  name: mongodb
+  name: mongo
   labels:
-    app: karsajobs
+    app: mongo
     type: backend
 
 spec:
   selector:
     matchLabels:
-      app: karsajobs
+      app: mongo
       type: backend
 
   serviceName: mongo-service
@@ -19,7 +19,7 @@ spec:
   template:
     metadata:
       labels:
-        app: karsajobs
+        app: mongo
         type: backend
         
     spec:
@@ -38,9 +38,9 @@ spec:
           volumeMounts:
             - name: mongo-persistent-storage
               mountPath: /data/db
-            - name: mongo-secret-mount
+            - name: mongo-secret
               mountPath: /etc/mongo-credentials
-            - name: mongo-config-mount
+            - name: mongo-config
               mountPath: /config
               readOnly: true
       volumes:
@@ -50,7 +50,7 @@ spec:
         - name: mongo-secret
           secret:
             secretName: mongo-secret
-        - name: mongo-config-mount
+        - name: mongo-config
           configMap:
             name: mongo-config
             items:

@@ -3,11 +3,12 @@ kind: Service
 metadata:
   name: mongo-service
   labels:
-    name: karsajobs
+    name: mongo
     type: backend
 spec:
   ports:
     - port: 27017
   selector:
+    app: mongo
     type: backend
-  type: ClusterIP
+  clusterIP: None
